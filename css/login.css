@@ -1,0 +1,80 @@
+:root{
+    --titulo:#333;
+    --button: #ee665c;
+    --opaco:#eee;
+    --white:#FFF;
+    --bg-login:#918f8f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border:none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    justify-content: center;
+    background-color: var(--bg-login);
+    border-radius: 20px;
+    border:5px solid BLACK;
+}
+
+.login-header{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.login-header img{
+    width: 100px ;
+}
+
+.login-header h1{
+    color: var(--titulo);
+    font-size: 1.5em;
+}
+
+.login-input{
+    border: 2px solid var(--titulo);
+    border-radius: 8px;
+    color:var(--titulo);
+    font-size: 1em;
+    margin-bottom: 15px;
+    max-width: 300px; /*! Vai ocupar 100% da largura, mas a máxima vai ser de 300px*/
+    width: 100%;
+    outline: none;
+    padding: 15px;
+}
+
+.login-button{
+    background-color:var(--button);
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 300px;
+    padding: 15px;
+    width: 100%;
+}
+
+.login-button:disabled{
+    background-color: var(--opaco);
+    color: #aaa;
+    cursor: auto;
+}

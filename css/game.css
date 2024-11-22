@@ -1,0 +1,58 @@
+:root{
+    --titulo:#333;
+    --button: #ee665c;
+    --opaco:#eee;
+    --white:#FFF;
+    --bg-login:#918f8f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border:none;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card{
+    width: 100%;
+    aspect-ratio: 3/4; /*! Define a proporção do card, sempre o mesmo para todos os tanhos do responsivo*/
+    background-color: #333;
+    border-radius: 5px;
+    position: relative; /*! torna a div .card pai da dia .face*/
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+/** SERVE PARA OS DOIS LADOS DO CARD*/
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--button);
+    border-radius: 5px;
+}
+
+.front{
+    transform: rotateY(180deg); /*! Já deixa a parte da frente invertida para que quando aconteça o rotate ela não fique como espelho */
+}
+
+.back{
+    background-image: url('../images/back.png');
+    backface-visibility: hidden; /*! faz com que a parte de tras do elemento seja escontida*/
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
