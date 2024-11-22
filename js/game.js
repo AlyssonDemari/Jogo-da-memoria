@@ -19,10 +19,10 @@ let firstCard = ''
 let secondCard = ''
 
 
-const checarFinal() => {
+const checarFinal = () => {
     const cartasDescobertas = document.querySelectorAll('.disable-card')
 
-    if(cartasDescobertas == 20){
+    if(cartasDescobertas.length == 20){ //! Definir o número de acordo com a quantidade de cartas
         alert('Parabens, Você ganhou o jogo')
     }
 }
@@ -41,7 +41,7 @@ const checarCarta = () =>{
         firstCard = ''
         secondCard = ''
 
-        chegarFinal()
+        checarFinal()
     }else {
 
         setTimeout(() => {
