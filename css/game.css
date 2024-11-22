@@ -42,6 +42,7 @@
     background-position: center;
     border: 2px solid var(--button);
     border-radius: 5px;
+    transition: all 1s ease;
 }
 
 .front{
@@ -53,6 +54,11 @@
     backface-visibility: hidden; /*! faz com que a parte de tras do elemento seja escontida*/
 }
 
-.card:hover{
-    transform: rotateY(180deg);
+.reveal-card{
+        transform: rotateY(180deg);
+}
+
+.disabled-card{
+    filter: saturate(0);
+    opacity: 0.5;
 }
