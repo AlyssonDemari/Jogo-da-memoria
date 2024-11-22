@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player')
+const timer = document.querySelector('.timer')
 
 //* personagens == characters
 const personagens = [ //! Array com o nome de todos os personagens (nome das imagens)
@@ -20,10 +22,12 @@ let secondCard = ''
 
 
 const checarFinal = () => {
-    const cartasDescobertas = document.querySelectorAll('.disable-card')
+    const cartasDescobertas = document.querySelectorAll('.disabled-card')
 
     if(cartasDescobertas.length == 20){ //! Definir o número de acordo com a quantidade de cartas
-        alert('Parabens, Você ganhou o jogo')
+        clearInterval(this.loop)
+        alert(`Parabéns ${spanPlayer.innerHTML}! seu tempo foi de ${timer.innerHTML} segundos`)
+
     }
 }
 
@@ -33,7 +37,6 @@ const checarCarta = () =>{
     const secondPersonagem = secondCard.getAttribute('data-personagem')
 
     if (firstPersonagem == secondPersonagem){
-
         
         firstCard.firstChild.classList.add('disabled-card')
         secondCard.firstChild.classList.add('disabled-card')
@@ -115,4 +118,20 @@ const loadGame = () =>{
     });
 }
 
-loadGame()
+const startTimer = () => {
+    this.loop = setInterval(() => {
+
+        const contadorTimer = +timer.innerHTML;
+        timer.innerHTML = contadorTimer + 1;
+
+    }, 1000)
+}
+
+window.onload = () =>{ //! só executa nossas funções quando a página for carregada
+
+    spanPlayer.innerHTML = localStorage.getItem('player') //! acessa o localStore do navegador e pega o nome que digitamos no inicio da página
+
+    startTimer()
+    loadGame() 
+}
+
