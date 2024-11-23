@@ -129,7 +129,7 @@ const startTimer = () => {
 
 window.onload = () =>{ //! só executa nossas funções quando a página for carregada
 
-    spanPlayer.innerHTML = localStorage.getItem('player') //! acessa o localStore do navegador e pega o nome que digitamos no inicio da página
+    spanPlayer.innerHTML = ' Player: ' + localStorage.getItem('player') //! acessa o localStore do navegador e pega o nome que digitamos no inicio da página
 
     startTimer()
     loadGame() 
